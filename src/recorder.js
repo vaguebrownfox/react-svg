@@ -54,9 +54,9 @@ export const getAudioInputStream = async (device) => {
 
 export const audioContext = new AudioContext();
 export const analyserNode = new AnalyserNode(audioContext, {
-  fftSize: 128,
+  fftSize: 1024,
   //   minDecibels: -111,
-  smoothingTimeConstant: 0.95,
+  smoothingTimeConstant: 0.9,
 });
 
 export const setupContext = async () => {

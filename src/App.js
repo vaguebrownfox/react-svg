@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   shape: {
     // stroke: "black",
     strokeWidth: 0.1,
-    opacity: 0.9,
+    opacity: 0.95,
     zIndex: -1,
   },
 }));
@@ -86,7 +86,7 @@ function App() {
 
       const dataArray = [...dataArrayBuffer].slice(
         0,
-        Math.floor(bufferLength / 1)
+        Math.floor(bufferLength / 3)
       );
 
       setViz({ spectrum: dataArray });
@@ -174,7 +174,8 @@ const Worm = ({ spectrum, vizRef }) => {
             cy={height - y}
             width={bw}
             r={y}
-            fill={shade[color < 100 ? 100 : color]}
+            // fill={shade[color < 100 ? 100 : color]}
+            fill={`hsl(${ynorm * 70}deg, 100%, 50%`}
           />
         );
       })}
